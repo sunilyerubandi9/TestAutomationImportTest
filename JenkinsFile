@@ -1,11 +1,11 @@
 
-def artifactname = "JenkinsDevOpsProject-0.0.1-SNAPSHOT-main.jar"
-def repoName = "JenkinsDevOpsProject"
-def pipelineName = "SunilDevOps-Multibranch-Project"
+def artifactname = "TestAutomationImportTest-0.0.1-SNAPSHOT-main.jar"
+def repoName = "TestAutomationImportTest"
+def pipelineName = "Automation_ImportFrameworkTest_Pipeline"
 def semanticVersion = "${env.BUILD_NUMBER}.0.0"
-def packageName = "JenkinsDevOpsProject-package_main-${env.BUILD_NUMBER}"
+def packageName = "TestAutomationImportTest-package_main-${env.BUILD_NUMBER}"
 def version = "${env.BUILD_NUMBER}.0"
-def pkgName = "JenkinsDevOpsProject-package-main"
+def pkgName = "TestAutomationImportTest-package-main"
 
 
 pipeline {
@@ -38,8 +38,8 @@ pipeline {
                 echo 'Deploying the change....'
                 //snDevOpsChange()
 
-                //snDevOpsArtifact(artifactsPayload: """{"artifacts": [{"name": "${artifactname}", "version": "1.${env.BUILD_NUMBER}","semanticVersion": "1.${env.BUILD_NUMBER}.0","repositoryName": "${repoName}"}],"branchName":"master"}""")
-                //snDevOpsPackage(name: "${pkgName}-${env.BUILD_NUMBER}", artifactsPayload: """{"artifacts":[{"name": "${artifactname}", "version": "1.${env.BUILD_NUMBER}", "repositoryName": "${repoName}"}], "branchName":"master"}""")
+                snDevOpsArtifact(artifactsPayload: """{"artifacts": [{"name": "${artifactname}", "version": "1.${env.BUILD_NUMBER}","semanticVersion": "1.${env.BUILD_NUMBER}.0","repositoryName": "${repoName}"}],"branchName":"main"}""")
+                snDevOpsPackage(name: "${pkgName}-${env.BUILD_NUMBER}", artifactsPayload: """{"artifacts":[{"name": "${artifactname}", "version": "1.${env.BUILD_NUMBER}", "repositoryName": "${repoName}"}], "branchName":"main"}""")
             }
        }      
   }

@@ -11,6 +11,7 @@ public class App {
        System.out.println("STRY0010040: Story update");
        System.out.println("STRY0010040: Story update");
        System.out.println("RAJU-49: Story update");
+       System.out.println("RAJU-50: Story update");
     }
 
 }

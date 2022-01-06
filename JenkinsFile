@@ -37,7 +37,7 @@ pipeline {
                 echo "Prod deploy..."
                 snDevOpsStep()
                 snDevOpsPackage(name: "devops_pipeline_demo", artifactsPayload: """{"artifacts": [
-                    {"name": "demo5.jar","version": "1.0","semanticVersion": "1.1.0","repositoryName": "TestAutomationImportTest"}]}""")
+                    {"name": "demo1.jar","version": "1.0","semanticVersion": "1.1.0","repositoryName": "TestAutomationImportTest"}]}""")
                 sleep 5
                 snDevOpsChange()
             }
